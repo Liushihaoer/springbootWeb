@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="UTF-8" />
+<title>日志列表</title>
+<style type=''>
+html {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	padding-left: 1%;
+	font: normal 17px tahoma, "Microsoft YaHei" !important;
+}
+
+a {
+	color: #107aff;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+ul li {
+	list-style: none;
+}
+</style>
+</head>
+<body>
+	<h1>日志列表</h1>
+	<ul th:each="logName:${logNameList}">
+		<li>
+		    <a th:href="@{/common/downloadLog(logName=${logName})}" th:text="${logName}"></a>
+		</li>
+	</ul>
+</body>
+</html>
